@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8">
+        <title>Ders-13</title>
+    </head>
+    <body>
+
+    <form action="" method="GET" enctype="multipart/form-data" id="form1">
+        
+        <label for="sadi">Şirket Adi</label>
+        <input id="sadi" disabled value="Seramiksan" type="text"> <br>
+
+        <label for="depadi">Departman Adi</label>
+        <input id="depadi" readonly value="IT" type="text"> <br>
+
+        <label for="kadi">Kulanıcı Adı</label>
+        <input id="kadi" type="text" required placeholder="Kullanıcı Adı"> <br>
+
+        <label for="eposta">E-mail</label>
+        <input id="eposta" type="email" required placeholder="E-mail"> <br>
+
+        <label for="url">Web Sitesi</label>
+        <input id="url" type="url" required placeholder="Web Sitesi"><br>
+    
+        <label for="sifre">Şifre</label>
+        <input id="sifre" type="password" required maxlength="5" placeholder="Şifre"> <br>
+
+        <input type="number" min="5" max="20" required placeholder="5-20"> <br>
+        
+        <label for="dosya">Dosya Seç</label>
+        <input id="dosya" type="file" name="dosya[]" accept="image/*" multiple> <br>
+
+        <label>
+            <input type="checkbox" required> Kuralları kabul ediyorum
+        </label> <br>
+        <label>
+            <input type="checkbox" checked required> Kuralları kabul ediyorum 2
+        </label> <br>
+        <label>
+            <input type="radio" name="cinsiyet" value="erkek" required> Erkek
+        </label>
+        <label>
+            <input type="radio" name="cinsiyet" value="kadın" required> Kadın
+        </label>
+        <br>
+        <input type="submit" value="Gönder">
+        <input type="submit" formmethod="POST" formtarget="_blank" value="Gönder (Post)">
+        <input type="reset" value="Sıfırla">
+        <input type="hidden" name="test" id="test">
+
+    </form>
+
+    <br><br><br>
+
+    <fieldset>
+        <legend>Bazı Html5 Tag'leri</legend>
+        <input type="color"><br>
+        <input type="date"><br>
+        <input type="email"> <br>
+        <input type="month"><br>
+        <input type="week"><br>
+        <input type="number" min="5" max="20"><br>
+        <input type="range" min="0" max="20" step="5"><br>
+        <input type="search" autofocus><br>
+        <input type="tel"><br>
+        <input type="time"> <br>
+        <input type="url"><br>
+    
+        <input type="text" name="kadi" autocomplete="off"> <br>
+
+    </fieldset>
+
+    <br><br><br>
+
+    <input list="diller" name="diller" form="form1">
+    <datalist id="diller">
+        <option value="HTML">
+        <option value="Css">
+        <option value="JavaScript">    
+    </datalist>
+    <br><br><br>
+
+    <select name="dil[]" id="lang" multiple size="5">
+        <optgroup label="Front-End Dilleri">
+            <option value="css">Css</option>
+            <option value="html">html</option>
+            <option value="javascript" selected>javascript</option>
+        </optgroup>
+        <optgroup label="Back-End Dilleri">
+            <option value="C++">C++</option>
+            <option value="Python">Python</option>
+            <option value="javascript" selected>javascript</option>
+        </optgroup>
+    </select>
+    <br><br><br>
+
+    <select name="lang" id="lang">
+        <optgroup label="Front-End Dilleri">
+            <option value="css">Css</option>
+            <option value="html">html</option>
+            <option value="javascript" selected>javascript</option>
+        </optgroup>
+        <optgroup label="Back-End Dilleri">
+            <option value="C++">C++</option>
+            <option value="Python">Python</option>
+            <option value="javascript" selected>javascript</option>
+        </optgroup>
+    </select>
+    <br><br><br>
+
+    <textarea name="" id="" cols="80" rows="40"></textarea>
+    <br>
+    <button type="submit">Submit Button</button>
+    <button type="button">Button</button>
+    <button type="reset"> Reset Button</button>
+    </body>
+</html>
+
+<!-- 
+    <form> form etiketliri bu tag ın içinde kullanılır genellikle. Amaç kullanıcıdan bilgi almak.
+    
+    action(attribute) gönderileceği yeri belirtir. yada input'un içinde formaction olarakta kullanılabilir.
+    method http metodunu belirtir.
+
+
+    <input> Kullanıcının girdi yapmasını sağlayan html tag'ıdır. type attribut' u hangi tür elemanı yazdıracağını belirtir. 
+        type ;
+        text: Normal textbox ekler
+        password: Şifre karakterli.
+        file: Dosya seçmemizi sağlar.
+        checkbox: 
+        submit: sunmak, göndermek
+        hidden: gizli
+        color: renk paleti verir.
+        date: 
+        email: email formunun kontrolünü sağlar.
+        url: url formunun kontrolünü sağlar.
+        tel: tel formunun kontrolünü sağlar.
+        range: scrol bar yapar.
+
+    <input> (disabled) : engelli-değiştirilemez yapar
+    <input> (readonly) : salt-okunur
+    <input> (required) : doldurulması zorunlu
+    <input> (maxlength) : Maksimum karekter uzunluğu
+    <input> (accept="image/*") : Sadece resim dosyalarını filitler.
+    <input> (multiple) : file tipindeki input'larda çoklu dosya seçebilmemizi sağlar.
+    <input> (autocomplete) : otomatik tamamlamayla ilgili seçimleri belirler.
+
+
+    <label> birden fazla elemanı şeçebilmemizi veya for attribute'i ile fokuslamamız sağlayabilir.
+
+    <select> input gibi geniş nitelikli bir form elemanı. Seçimlerle ilgili
+        <optgroup> Seçilecek elemanları gruplamamızı sağlıyor.
+
+    
+    <filedset> bazı html elemanlarını gruplamamıza yarar.GrupBox gibi...(field: alan)
+        <legend> filedset alanına başlık eklememizi sağlar.
+
+    Not: name burda çok önemli. Özellikle yazılım dilleri ile değerleri almamızı sağlıyor.
+
+    Note-2: input ile yapabildiğimiz bazı özellileri button tag'iyle de yapabiliriz. Hatta button ile yapmak daha iyi olur.
+    
+ -->
